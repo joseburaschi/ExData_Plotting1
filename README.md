@@ -29,6 +29,16 @@ packages into your R environment before running the student R code.
 <li><b>DBI</b></li>
 </ul>
 
+As can be seen on the listing of github files, there are 4 R scripts
+that are used to generate the 4 assignment plots from the given dataset.
+
+<ul>
+<li><a href="https://github.com/joseburaschi/ExData_Plotting1/plot1.R"></a>plot1.R</li>
+<li><a href="https://github.com/joseburaschi/ExData_Plotting1/plot2.R"></a>plot2.R</li>
+<li><a href="https://github.com/joseburaschi/ExData_Plotting1/plot3.R"></a>plot3.R</li>
+<li><a href="https://github.com/joseburaschi/ExData_Plotting1/plot4.R"></a>plot4.R</li>
+</ul>
+
 
 ## Loading the data
 
@@ -53,22 +63,22 @@ to be 480 by 480 in size.
 
 ### Plot 1 - Student Plot
 
-![plot of assignment plot1](figure/plot1.png) 
+![plot of assignment plot1](plot1.png) 
 
 
 ### Plot 2 - Student Plot
 
-![plot of assignment plot2](figure/plot2.png) 
+![plot of assignment plot2](plot2.png) 
 
 
 ### Plot 3 - Student Plot
 
-![plot of assignment plot3](figure/plot3.png) 
+![plot of assignment plot3](plot3.png) 
 
 
 ### Plot 4 - Student Plot
 
-![plot of assignment plot4](figure/plot4.png) 
+![plot of assignment plot4](plot4.png) 
 
 
 
