@@ -33,10 +33,10 @@ As can be seen on the listing of github files, there are 4 R scripts
 that are used to generate the 4 assignment plots from the given dataset.
 
 <ul>
-<li><a href="https://github.com/joseburaschi/ExData_Plotting1/plot1.R"></a>plot1.R</li>
-<li><a href="https://github.com/joseburaschi/ExData_Plotting1/plot2.R"></a>plot2.R</li>
-<li><a href="https://github.com/joseburaschi/ExData_Plotting1/plot3.R"></a>plot3.R</li>
-<li><a href="https://github.com/joseburaschi/ExData_Plotting1/plot4.R"></a>plot4.R</li>
+<li><a href="https://github.com/joseburaschi/ExData_Plotting1/plot1.R">plot1.R</a></li>
+<li><a href="https://github.com/joseburaschi/ExData_Plotting1/plot2.R">plot2.R</a></li>
+<li><a href="https://github.com/joseburaschi/ExData_Plotting1/plot3.R">plot3.R</a></li>
+<li><a href="https://github.com/joseburaschi/ExData_Plotting1/plot4.R">plot4.R</a></li>
 </ul>
 
 
