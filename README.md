@@ -55,12 +55,12 @@ that are used to generate the 4 assignment plots from the given dataset.
 Note the following warning message that can be ignored and that
 have no effect on generating the plots.
 
-'''
+```
 Warning messages:
 1: closing unused connection 4 ()
 2: closing unused connection 5 ()
 ...
-'''
+```
 
 ## Loading the data
 
