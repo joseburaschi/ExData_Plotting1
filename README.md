@@ -57,7 +57,9 @@ have no effect on generating the plots.
 
 <span style="color:red">
 Warning messages:
-closing unused connection 4 ()
+1: closing unused connection 4 ()
+2: closing unused connection 5 ()
+...
 </span>
 
 ## Loading the data

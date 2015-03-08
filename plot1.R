@@ -62,7 +62,7 @@ if (length(dev.list()) > 0) {
 
 png(plotFileName, height = 480, width = 480, units = "px", bg = "transparent")
 par(mfrow = c(1,1), bg="transparent")
-hist(householdConsumption$Global_active_power,col = "Red", freq = TRUE, xlab = "Global Active Power (kilowatts)", main = "Global Active Power", cex.axis=0.75, cex.lab=0.75, cex.main=0.9)
+hist(householdConsumption$Global_active_power,col = "Red", freq = TRUE, xlab = "Global Active Power (kilowatts)", main = "Global Active Power", cex.axis=1, cex.lab=1, cex.main=1.2)
 
 #Alternate way to print to PNG File copy plot to a PNG file
 #dev.copy(png, file = plotFileName, width = 480, height = 480, units = "px", bg="transparent")
