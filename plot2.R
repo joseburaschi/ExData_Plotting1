@@ -6,8 +6,8 @@
 library(sqldf)
 # sqldf also requires the following packages: gsubfn, proto, RSQLite, DBI, tcltk
 
-#Set working directory
-setwd("/Users/jaburaschi/DataScience/Coursera/ExploratoryDataAnalysis/project1")
+# Set working directory
+#setwd("/Users")
 
 # Retrieve and echo current working directory to which the file will be downloaded
 getwd()
@@ -25,7 +25,7 @@ unzip(zippedFileName, overwrite = TRUE)
 
 # Filer file to only 2007-02-01 and 2007-02-02 dated samples
 #
-# On Macs using a system command to run egrep is faster
+# On Macs using a system command to run egrep is faster instead of using sqldf
 #
 #if (.Platform$OS.type == 'unix') {
 #  system(paste("egrep '^[12]{1}\\/2\\/2007;' ", unzippedFileName, " > ", filteredFileName ))
@@ -42,7 +42,7 @@ householdConsumption <- read.csv2.sql(connection = sqldfConnection, dbname = tem
 close(dataFileConn)
 sqldf()
 
-# read filtered CSV into R dataframe 
+# assign column names if none are assigned
 # colnames(householdConsumption) = c('Date','Time','Global_active_power','Global_reactive_power','Voltage','Global_intensity','Sub_metering_1','Sub_metering_2','Sub_metering_3')
 
 #  Examine head of file
@@ -60,9 +60,10 @@ if (length(dev.list()) > 0) {
   dev.off(dev.list()["RStudioGD"])
 }
 
+png(plotFileName, height = 480, width = 480, units = "px", bg = "transparent")
 par(mfrow = c(1,1), bg="transparent")
-plot(householdConsumption$dTime, householdConsumption$Global_active_power, type="l", ylab = "Global Active Power (kilowatts)", xlab = "", cex.axis=0.75, cex.lab=0.75)
+plot(householdConsumption$dTime, householdConsumption$Global_active_power, type="l", ylab = "Global Active Power (kilowatts)", xlab = "", cex.axis=1, cex.lab=1)
 
-#Copy plot to a PNG file
-dev.copy(png, file = plotFileName, width = 480, height = 480, units = "px")
+#Alternate way to print to PNG File copy plot to a PNG file
+#dev.copy(png, file = plotFileName, width = 480, height = 480, units = "px")
 dev.off()

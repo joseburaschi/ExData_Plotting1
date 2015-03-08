@@ -6,8 +6,8 @@
 library(sqldf)
 # sqldf also requires the following packages: gsubfn, proto, RSQLite, DBI
 
-#Set working directory
-setwd("/Users/jaburaschi/DataScience/Coursera/ExploratoryDataAnalysis/project1")
+# Set working directory
+#setwd("/Users")
 
 # Retrieve and echo current working directory to which the file will be downloaded
 getwd()
@@ -25,7 +25,7 @@ unzip(zippedFileName, overwrite = TRUE)
 
 # Filer file to only 2007-02-01 and 2007-02-02 dated samples
 #
-# On Macs using a system command to run egrep is faster
+# On Macs using a system command to run egrep is faster instead of using sqldf
 #
 #if (.Platform$OS.type == 'unix') {
 #  system(paste("egrep '^[12]{1}\\/2\\/2007;' ", unzippedFileName, " > ", filteredFileName ))
@@ -41,7 +41,7 @@ householdConsumption <- read.csv2.sql(dbname = tempfile(), sql = "select * from 
 close(dataFileConn)
 sqldf()
 
-# read filtered CSV into R dataframe 
+# assign column names if none are assigned
 # colnames(householdConsumption) = c('Date','Time','Global_active_power','Global_reactive_power','Voltage','Global_intensity','Sub_metering_1','Sub_metering_2','Sub_metering_3')
 
 #  Examine head of file
@@ -56,25 +56,26 @@ householdConsumption$dTime = as.POSIXct(strptime(paste(householdConsumption$Date
 if (length(dev.list()) > 0) {
   dev.off(dev.list()["RStudioGD"])
 }
+png(plotFileName, height = 480, width = 480, units = "px", bg = "transparent")
 par(mfrow = c(2,2), bg="transparent", new=FALSE)
 
 #Global Active Power
-plot(householdConsumption$dTime, householdConsumption$Global_active_power, type="l", ylab = "Global Active Power", xlab = "", cex.axis=0.75, cex.lab=0.75)
+plot(householdConsumption$dTime, householdConsumption$Global_active_power, type="l", ylab = "Global Active Power", xlab = "", cex.axis=0.95, cex.lab=0.95)
 
 #Voltage
-plot(householdConsumption$dTime, householdConsumption$Voltage, type="l", ylab = "Voltage", xlab = "datetime", cex.axis=0.75, cex.lab=0.75)
+plot(householdConsumption$dTime, householdConsumption$Voltage, type="l", ylab = "Voltage", xlab = "datetime", cex.axis=0.95, cex.lab=0.95)
 
 #Energy sub metering
-plot(householdConsumption$dTime, householdConsumption$Sub_metering_1, type="l", ylab = "Energy sub metering", xlab = "", col="Black", cex.axis=0.75, cex.lab=0.75)
+plot(householdConsumption$dTime, householdConsumption$Sub_metering_1, type="l", ylab = "Energy sub metering", xlab = "", col="Black", cex.axis=0.95, cex.lab=0.95)
 lines(householdConsumption$dTime, householdConsumption$Sub_metering_2, col="Red")
 lines(householdConsumption$dTime, householdConsumption$Sub_metering_3, col= "Blue")
 
 legendHandle = legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col = c("Black", "Red", "Blue"), ncol = 1, seg.len=1.8,
-                      text.col="Black", lty = c(1,1,1),pch=c(-1,-1,-1), cex=0.75, y.intersp=1.15, xjust=1, yjust=1, text.width = strwidth("Sub_metering_3")*0.87, box.col="transparent")
+                      text.col="Black", lty = c(1,1,1),pch=c(-1,-1,-1), cex=0.95, y.intersp=1.15, xjust=1, yjust=1, text.width = strwidth("Sub_metering_3")*0.95, box.col="transparent")
 
 #Global Reactive Power
-plot(householdConsumption$dTime, householdConsumption$Global_reactive_power, type="l", ylab = "Global_reactive_power", xlab = "datetime", ylim=c(0.0,0.5), cex.axis=0.75, cex.lab=0.75)
+plot(householdConsumption$dTime, householdConsumption$Global_reactive_power, type="l", ylab = "Global_reactive_power", xlab = "datetime", ylim=c(0.0,0.5), cex.axis=0.95, cex.lab=0.95)
 
-#Copy plot to a PNG file
-dev.copy(png, file = plotFileName, width = 480, height = 480, units = "px")
+#Alternate way to print to PNG File copy plot to a PNG file
+#dev.copy(png, file = plotFileName, width = 480, height = 480, units = "px")
 dev.off()

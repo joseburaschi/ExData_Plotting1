@@ -19,7 +19,7 @@ the course web site:
 
 The following packages will require installation to run the student
 scripts and generate the assignment plots.  Please install these 
-packages into your R environment before running the student R code.
+packages in your R environment before running the student R code.
 
 <ul>
 <li><b>sqldf</b></li>
@@ -28,6 +28,16 @@ packages into your R environment before running the student R code.
 <li><b>RSQLite</b></li>
 <li><b>DBI</b></li>
 </ul>
+
+
+### Setting the Working Directory
+
+The working directory can be set by uncommenting and correctly setting
+the parameter in quotes for the setwd() function call on line 10 of each 
+script.
+
+setwd("/Users")
+
 
 As can be seen on the listing of github files, there are 4 R scripts
 that are used to generate the 4 assignment plots from the given dataset.
@@ -39,6 +49,16 @@ that are used to generate the 4 assignment plots from the given dataset.
 <li><a href="https://github.com/joseburaschi/ExData_Plotting1/plot4.R">plot4.R</a></li>
 </ul>
 
+
+## Warning Messages to Ignore
+
+Note the following warning message that can be ignored and that
+have no effect on generating the plots.
+
+<span style="color:red">
+Warning messages:
+closing unused connection 4 ()
+</span>
 
 ## Loading the data
 
